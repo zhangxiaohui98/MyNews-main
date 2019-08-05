@@ -145,7 +145,6 @@
 					url : "${APP_PATH}/user/doReg.do",
 					success : function(result){
 						if(result.success){
-							layer.msg("注册成功，请登录！", {time:1000, icon:6, shift:6});
 							window.location.href="${APP_PATH}/login.htm";
 						}else{
 							layer.msg("注册失败！"+result.message, {time:1000, icon:5, shift:6});

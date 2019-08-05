@@ -23,44 +23,17 @@
 			}
 		</style>
 	</head>
-
 	<body>
-
 		<div class="navbar-wrapper">
 			<div class="container">
 				<jsp:include page="/WEB-INF/jsp/common/nav.jsp"></jsp:include>
 			</div>
 		</div>
-
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-3 col-md-2 sidebar">
 					<div class="tree">
-						<ul style="padding-left:0px;" class="list-group">
-							<li class="list-group-item tree-closed">
-								<a href="user.htm"><i class="glyphicon glyphicon-dashboard"></i>个人信息</a>
-							</li>
-							<li class="list-group-item">
-								<span><i class="glyphicon glyphicon glyphicon-dashboard"></i> 发布新闻 <span class="badge" style="float:right">2</span></span>
-								<ul style="margin-top:10px;">
-									<li style="height:30px;">
-										<a href="publish.htm" style="color:red;"><i class="glyphicon glyphicon-dashboard"></i> 发布</a>
-									</li>
-									<li style="height:30px;">
-										<a href="draft.htm"><i class="glyphicon glyphicon-dashboard"></i> 草稿箱</a>
-									</li>
-								</ul>
-							</li>
-							<li class="list-group-item tree-closed">
-								<a href="comment.htm"><i class="glyphicon glyphicon-dashboard"></i> 我的评论</a>
-							</li>
-							<li class="list-group-item tree-closed">
-								<a href="favorite.htm"><i class="glyphicon glyphicon-dashboard"></i> 收藏夹</a>
-							</li>
-							<li class="list-group-item tree-closed">
-								<a href="history.htm"><i class="glyphicon glyphicon-dashboard"></i> 浏览历史</a>
-							</li>
-						</ul>
+						<jsp:include page="/WEB-INF/jsp/common/menu.jsp"></jsp:include>
 					</div>
 				</div>
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -136,6 +109,7 @@
 		<script src="${APP_PATH}/bootstrap/js/bootstrap.min.js"></script>
 		<script src="${APP_PATH}/script/docs.min.js"></script>
 		<script src="${APP_PATH}//jquery/layer/layer.js"></script>
+		<script src="${APP_PATH }/script/menu.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$(".list-group-item").click(function() {
@@ -149,6 +123,7 @@
 					}
 				});
 			    queryPageUser(0);
+			    showMenu();
 			});
 			$("tbody .btn-success").click(function() {
 				window.location.href = "assignRole.html";
